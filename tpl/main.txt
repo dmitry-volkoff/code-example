@@ -1,0 +1,7 @@
+<?php
+echo $tdto->title . PHP_EOL;
+echo "--------------------------" . PHP_EOL;
+echo PHP_EOL;
+echo $tdto->msg['message'] . PHP_EOL;
+
+

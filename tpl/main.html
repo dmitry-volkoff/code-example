@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="./min.css" rel="stylesheet" type="text/css" />
+	<title><?=$tdto->title?></title>
+	<!--[if IE 7]>
+	<style>
+		.col {margin: 0 0.9% !important;}
+	</style>
+	<![endif]-->
+	<style>
+		hr {
+			border: 1px dotted gray;
+			width: 70%;
+			text-align: left;
+			margin-left: 0;
+		}
+
+		.skip {
+			color: gray;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container" id="container">
+		<h3><?=$tdto->title?></h3>
+		<form name="searchForm" id="seachForm" method="get" action="">
+			<input name="start" value="Запустить" type="submit" class="btn btn-sm btn-b" />
+		</form>
+		<div id="msg" class="<?=$tdto->msg['css_class']?>" style="display: <?=$tdto->msg['display']?>;"><?=$tdto->msg['message']?></div>
+		<br>
+	</div>
+	<script>
+		window.onload = function() {
+			<?=$tdto->msg['onloadFunc']?>
+		};
+	</script>
+	<div class="container">
+	
