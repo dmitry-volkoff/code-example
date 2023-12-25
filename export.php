@@ -67,10 +67,6 @@ function updateContacts(object $db_handle, array $contacts_to_change): array
 	
 	$batch_params = [];
 
-	//echo "contacts_to_change\n";
-
-	//print_r($contacts_to_change);
-
 	foreach ($contacts_to_change as $id => $assigned_by_id)
 	{
 		$batch_params[$id] =
@@ -80,7 +76,7 @@ function updateContacts(object $db_handle, array $contacts_to_change): array
 		];
 	}
 
-	// То, ради чего всё затевалось - апдейт контактов
+	// апдейт контактов
 	$result = $db_handle->callBatch($batch_params, 1); // halt_on_errors
 
 	//echo "batch_params\n";
@@ -106,17 +102,10 @@ foreach ($db_gd->bx24Get50('user.get', $user_params) as $res)
 {
 	$users_50 = [];
 
-	// исключаем сотрудника Любашу
 	foreach ($res['result'] as $k => $v)
 	{
-		if ($res['result'][$k]['ID'] == 31)
-		{
-			continue;
-		}
 		array_push($users_50, $res['result'][$k]['ID']);
 	}
-
-	//print_r($users_50);// exit(0);
 
 	// Подставляем ID сотрудников (по 50 ID) в фильтр поиска компаний,
 	// где данные сотрудники в поле ASSIGNED_BY_ID
@@ -135,7 +124,6 @@ foreach ($db_gd->bx24Get50('user.get', $user_params) as $res)
 		// Проходим в цикле по всем контактам каждой компании,
 		// и заменяем contact.ASSIGNED_BY_ID на company.ASSIGNED_BY_ID
 		
-		//$res_company = [];
 		$companies_50 = []; // ID => ASSIGNED_BY_ID
 
 		foreach ($res_company['result'] as $k => $v)
@@ -237,9 +225,6 @@ foreach ($db_gd->bx24Get50('user.get', $user_params) as $res)
 			} // foreach($contacts as $k => $contact_info)
 		}
 	} //foreach ($db_gd->bx24Get50('crm.company.list', $company_params))
-
-
-	//exit(0);
 
 	if (ob_get_level() > 0)
 	{
