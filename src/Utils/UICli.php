@@ -13,7 +13,6 @@ class UICli implements UIInterface
 	/**
 	 * __construct
 	 *
-	 *
 	 * @param string $template_file
 	 *
 	 * @return void
@@ -25,7 +24,6 @@ class UICli implements UIInterface
 
 	/**
 	 * render
-	 *
 	 *
 	 * @param object $template_DTO
 	 *
@@ -39,7 +37,6 @@ class UICli implements UIInterface
 	/**
 	 * render_no_argument
 	 *
-	 *
 	 * @param mixed $template_DTO
 	 *
 	 * @return void
@@ -52,7 +49,6 @@ class UICli implements UIInterface
 
 	/**
 	 * message
-	 *
 	 *
 	 * @param string $msg
 	 * @param string $error
@@ -70,7 +66,6 @@ class UICli implements UIInterface
 	
 	/**
 	 * total_buffered
-	 *
 	 *
 	 * @param int $added_companies
 	 * @param int $found_companies
@@ -95,7 +90,6 @@ class UICli implements UIInterface
 	/**
 	 * total
 	 *
-	 *
 	 * @param int $added_companies
 	 * @param int $found_companies
 	 *
@@ -109,20 +103,15 @@ class UICli implements UIInterface
 	/**
 	 * hr_line_buffered
 	 *
-	 *
-	 *
 	 * @return string
 	 */
 	public function hr_line_buffered() : string
 	{
-		//return '------------------------------------------------------------' . PHP_EOL;
 		return str_repeat('-', 60) . PHP_EOL;
 	}
 
 	/**
 	 * hr_line
-	 *
-	 *
 	 *
 	 * @return void
 	 */
@@ -134,8 +123,6 @@ class UICli implements UIInterface
 	/**
 	 * close_output_buffered
 	 *
-	 *
-	 *
 	 * @return string
 	 */
 	public function close_output_buffered() : string
@@ -145,8 +132,6 @@ class UICli implements UIInterface
 
 	/**
 	 * close_output
-	 *
-	 *
 	 *
 	 * @return void
 	 */
